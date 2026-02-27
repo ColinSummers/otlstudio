@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML website for otlstudio.com — the portfolio site for Outside The Lines Studio, an architecture firm by Colin Summers and Robert Whitehead. Originally a PHP/MySQL site on NetworkSolutions, converted to static HTML/CSS in 2026. Hosted on Cloudflare Pages.
+Static HTML website for otlstudio.com — the portfolio site for Outside The Lines Studio, an architecture firm by Colin Summers and Robert Whitehead. Originally a PHP/MySQL site on NetworkSolutions, converted to static HTML/CSS in 2026. Hosted on GitHub Pages.
 
 ## Development
 
@@ -22,7 +22,7 @@ To regenerate HTML from PHP sources: `python3 _tools/migrate.py` (requires old_o
 - **projects/** — 52 individual project pages (named by project ID: YYYYMM##.html)
 - **code/** — Colin's programming portfolio (index.html, jungle.html, tightcircle.html, ColinSummers.pdf)
 - **images/** — All project photography (~710 JPEGs including thumbnails, plus images/big/ for larger versions)
-- **_Media/** — Site-level images (logo, headshots, contact image)
+- **media/** — Site-level images (logo, headshots, contact image)
 - **_tools/** — Migration script (migrate.py)
 
 ## Conventions
@@ -44,4 +44,4 @@ To regenerate HTML from PHP sources: `python3 _tools/migrate.py` (requires old_o
 
 ## Deployment
 
-Cloudflare Pages — no build step needed. Just serve the root directory as static files.
+GitHub Pages — no build step needed. Just push to main and GitHub serves the root directory as static files.
