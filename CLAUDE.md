@@ -21,9 +21,15 @@ To regenerate HTML from PHP sources: `python3 _tools/migrate.py` (requires old_o
 - **mission/** — Mission sub-pages (generating.html, plan.html)
 - **projects/** — 52 individual project pages (named by project ID: YYYYMM##.html)
 - **code/** — Colin's programming portfolio (index.html, jungle.html, tightcircle.html, ColinSummers.pdf)
-- **images/** — All project photography (~710 JPEGs including thumbnails, plus images/big/ for larger versions)
+- **images/** — All project photography (~710 JPEGs including thumbnails)
+  - **images/big/** — Archival high-resolution originals (up to 3072px, not served directly)
+  - **images/lightbox/** — Web-optimized lightbox images (1600px long edge, JPEG q85), served in CSS lightbox overlays
 - **media/** — Site-level images (logo, headshots, contact image)
-- **_tools/** — Migration script (migrate.py)
+- **_tools/** — Migration and image tools
+  - `migrate.py` — Regenerate HTML from PHP sources (requires old_otlstudio directory at sibling level)
+  - `catalog_images.py` — Build SQLite catalog of site images with dimensions and perceptual hashes
+  - `find_bigger.py` — Search directories for larger versions of site images using pHash matching
+  - `images.db` — SQLite database cataloging site images (path, project, dimensions, pHash)
 
 ## Conventions
 
@@ -32,7 +38,7 @@ To regenerate HTML from PHP sources: `python3 _tools/migrate.py` (requires old_o
 - Single stylesheet: `style.css` (linked with relative paths based on directory depth)
 - All pages share a common navbar and footer template
 - No JavaScript is used anywhere on the site
-- CSS-only lightbox galleries using `:target` pseudo-selector
+- CSS-only lightbox galleries using `:target` pseudo-selector; lightbox images served from `images/lightbox/`
 - Gallery thumbnails use CSS Grid layout
 - Grey/white theme with red accents (firebrick) using CSS custom properties
 - Project images named YYYYMM##.jpg; thumbnails end with t (YYYYMM##t.jpg)
