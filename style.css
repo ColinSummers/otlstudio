@@ -41,6 +41,48 @@ a:hover { color: var(--accent-hover); }
 img { max-width: 100%; height: auto; display: block; }
 
 /* ============================================
+   Site header
+   ============================================ */
+
+.site-header {
+  background: var(--bg-primary);
+  padding: 1.25rem 1.5rem;
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+}
+
+.site-header a:hover { color: var(--accent); }
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.header-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.header-name {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
    Navigation
    ============================================ */
 
@@ -60,17 +102,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: var(--nav-height);
 }
 
-.navbar-brand {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #e0e0e0;
-  white-space: nowrap;
-}
-
-.navbar-brand:hover { color: #fff; }
+.navbar-brand { display: none; }
 
 .nav-links {
   list-style: none;
@@ -395,9 +427,11 @@ hr {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(3, auto);
+  gap: 4px;
   margin-bottom: 2rem;
+  justify-content: start;
+  max-width: 480px;
 }
 
 .portfolio-grid a {
@@ -408,8 +442,8 @@ hr {
 }
 
 .portfolio-grid a img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   transition: opacity 0.2s;
 }

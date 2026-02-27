@@ -155,9 +155,9 @@ def html_template(title, content, section="", depth=0):
     nav_items = [
         ("Mission", f"{rel}mission.html", "mission"),
         ("Projects", f"{rel}projects.html", "projects"),
-        ("Journal", f"{rel}journal.html", "journal"),
         ("About", f"{rel}about.html", "about"),
         ("Contact", f"{rel}contact.html", "contact"),
+        ("Code", f"{rel}code/index.html", "code"),
     ]
 
     nav_html = ""
@@ -177,7 +177,7 @@ def html_template(title, content, section="", depth=0):
 <body>
   <nav class="navbar">
     <div class="navbar-inner">
-      <a class="navbar-brand" href="{rel}index.html">OTL Studio</a>
+      <a class="navbar-brand" href="{rel}index.html"><img src="{rel}_Media/otl_logo.jpg" alt="" class="navbar-logo" /> Outside The Lines Studio</a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
       <ul class="nav-links">
@@ -189,7 +189,7 @@ def html_template(title, content, section="", depth=0):
   </main>
   <footer class="site-footer">
     <p>&copy; Outside The Lines Studio</p>
-    <p class="tagline">Design Consultation &middot; Santa Monica, California</p>
+    <p class="tagline">Design Consultation &middot; Friday Harbor, Washington</p>
   </footer>
 </body>
 </html>
@@ -557,7 +557,7 @@ def generate_homepage():
       <a href="about.html">About</a> will tell you who we are and
       <a href="contact.html">Contact</a> will tell you how to get ahold of us.
       </p>
-      <p class="tagline">Design Consultation &middot; Santa Monica, California</p>
+      <p class="tagline">Design Consultation &middot; Friday Harbor, Washington</p>
     </div>"""
 
     html = html_template("Home", content, "", depth=0)
